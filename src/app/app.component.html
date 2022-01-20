@@ -1,0 +1,29 @@
+<div align="center">
+<span style="font-size: medium; font-family: Arial, Helvetica, sans-serif;"><b>{{title}} app is running </b></span>
+<br>
+<mat-divider></mat-divider>
+<br>
+<form class="example-form">
+<!--text1-->
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Client ID</mat-label>
+  <input matInput type="text" name="ghClientId" [(ngModel)]="ghClientId">
+  <button *ngIf="ghClientId" matSuffix mat-icon-button aria-label="Clear" (click)="ghClientId=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Client Secret</mat-label>
+  <input matInput type="text" name="ghClientSecret" [(ngModel)]="ghClientSecret">
+  <button *ngIf="ghClientSecret" matSuffix mat-icon-button aria-label="Clear" (click)="ghClientSecret=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+
+
+<button mat-raised-button color="primary" (click)="loginGitHub()">Login with GitHub</button>
+</form>
+
+</div>
+<router-outlet></router-outlet>
